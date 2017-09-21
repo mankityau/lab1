@@ -1,7 +1,9 @@
+#include <cmath>
 // 1D physics library
 namespace physics {
-
 // library implementation
+    static double airDensity = 1.225;
+
     double compute_position(double x0, double v, double dt) {
         return x0 + v * dt;
     }
@@ -16,5 +18,9 @@ namespace physics {
     }
     double compute_acceleration(double f, double m) {
         return f / m;
+    }
+
+    double computeDragForce(double velocity, double dragArea) {
+        return 0.5 * airDensity * dragArea * pow(velocity, 2.0);
     }
 }
