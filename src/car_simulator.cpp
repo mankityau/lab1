@@ -35,14 +35,15 @@ int main() {
   // initialize the car's state
   double x = 0;  // initial position
   double v = 0;  // initial velocity
-  double a = 0;  // acceleration
+  double a = physics::compute_acceleration(engine_force, mass);  // computed acceleration
   double t = 0;  // initial time
 
   // run the simulation
   for (int i=0; i<N; ++i) {
 
     // COMPUTE UPDATED STATE HERE
-
+      x = physics::compute_position(x, v, dt);
+      v = physics::compute_velocity(v, a, dt);
     t += dt;  // increment time
 
     // print the time and current state
