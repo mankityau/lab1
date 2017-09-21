@@ -33,17 +33,21 @@ int main() {
   std::cin >> N;
 
   // initialize the car's state
+    double totalForce = 0;
   double x = 0;  // initial position
   double v = 0;  // initial velocity
-  double a = physics::compute_acceleration(engine_force, mass);  // computed acceleration
+  double a = 0;  // computed acceleration
   double t = 0;  // initial time
 
   // run the simulation
   for (int i=0; i<N; ++i) {
 
     // COMPUTE UPDATED STATE HERE
-      x = physics::compute_position(x, v, dt);
+      totalForce = engine_force + physics::computeDragForce(v, drag_area);
+      a = physics::compute_acceleration(totalForce, mass);
       v = physics::compute_velocity(v, a, dt);
+      x = physics::compute_position(x, v, dt);
+
     t += dt;  // increment time
 
     // print the time and current state
