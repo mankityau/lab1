@@ -35,8 +35,8 @@ void Car::drive(double dt) {
     state.set(updatedPosition, updatedVelocity, updatedAcceleration, updateTime);
 }
 
-State Car::getState() {
-    return state;
+State * Car::getState() {
+    return &state;
 }
 
 std::ostream& operator<<(std::ostream& os, Car& car) {
