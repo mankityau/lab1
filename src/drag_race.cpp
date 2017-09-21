@@ -21,8 +21,15 @@ int main() {
   for (double t = 0; t <= 60; t += dt) {
     car1.drive(dt);
     car2.drive(dt);
-       
     // XXX print out who's in the lead
+      std::cout << "The car in the lead right now is...";
+      if (car1.getState().position > car2.getState().position) {
+          std::cout << car1 << std::endl;
+      } else if (car1.getState().position < car2.getState().position) {
+          std::cout << car2 << std::endl;
+      } else {
+          std::cout << "looks like they are at the same position" << std::endl;
+      }
   }
 
   return 0;

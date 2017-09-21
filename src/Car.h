@@ -8,7 +8,12 @@
 
 class Car {
  private:
-  // member variables
+    std::string model;
+    double mass;
+    double engineForce;
+    double dragArea;
+    bool engineOn;
+    State state;
 
  public:
   // constructor
@@ -19,6 +24,6 @@ class Car {
   void accelerate(bool on);  // turn the accelerator on/off
   void drive(double dt);     // drive the car for an amount of time dt
   State getState();          // returns the car's state
+    friend std::ostream& operator<<(std::ostream& os, Car& car);
 };
-
 #endif
