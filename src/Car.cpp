@@ -44,3 +44,7 @@ std::ostream& operator<<(std::ostream& os, Car& car) {
        << ", state: " << car.state;
     return os;
 }
+
+bool Car::isEngineOn() {
+    return engineOn;
+}
