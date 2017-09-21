@@ -22,7 +22,7 @@ class Car {
   std::string getModel();    // gets the model name
   double getMass();          // mass of the car
   void accelerate(bool on);  // turn the accelerator on/off
-  void drive(double dt);     // drive the car for an amount of time dt
+  virtual void drive(double dt);     // drive the car for an amount of time dt
   State getState();          // returns the car's state
     friend std::ostream& operator<<(std::ostream& os, Car& car);
 };
