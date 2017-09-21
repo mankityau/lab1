@@ -39,7 +39,7 @@ State Car::getState() {
     return state;
 }
 
-    std::ostream& operator<<(std::ostream& os, Car& car) {
+std::ostream& operator<<(std::ostream& os, Car& car) {
     os << "model: " << car.model
        << ", state: " << car.state;
     return os;
