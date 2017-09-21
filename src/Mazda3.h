@@ -3,7 +3,7 @@
 
 class Mazda3 : public Car {
 public:
-    Mazda3() : Car("Mazda 3", 1600, 790, 0.61){};
+    Mazda3() : Car("Mazda 3", 1600, 790, 0.61) {};
 };
 
 #endif

@@ -7,7 +7,7 @@
 #include "physics.h"
 
 class Car {
- private:
+private:
     std::string model;
     double mass;
     double engineForce;
@@ -17,16 +17,18 @@ class Car {
 protected:
     State state;
 
- public:
-  // constructor
-  Car(std::string model, double mass, double engine_force, double drag_area);
-  
-  std::string getModel();    // gets the model name
-  double getMass();          // mass of the car
-  void accelerate(bool on);  // turn the accelerator on/off
-  virtual void drive(double dt);     // drive the car for an amount of time dt
-  State * getState();          // returns the car's state
+public:
+    // constructor
+    Car(std::string model, double mass, double engine_force, double drag_area);
+
+    std::string getModel();    // gets the model name
+    double getMass();          // mass of the car
+    void accelerate(bool on);  // turn the accelerator on/off
+    virtual void drive(double dt);     // drive the car for an amount of time dt
+    State *getState();          // returns the car's state
     bool isEngineOn();
-    friend std::ostream& operator<<(std::ostream& os, Car& car);
+
+    friend std::ostream &operator<<(std::ostream &os, Car &car);
 };
+
 #endif

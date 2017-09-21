@@ -34,7 +34,7 @@ public:
 
 };
 
-inline std::ostream& operator<<(std::ostream& os, State& state) {
+inline std::ostream &operator<<(std::ostream &os, State &state) {
     os << "t: " << state.time << ", x: " << state.position
        << ", v: " << state.velocity << ", a: " << state.acceleration;
     return os;

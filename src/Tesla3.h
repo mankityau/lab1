@@ -3,7 +3,7 @@
 
 class Tesla3 : public Car {
 public:
-    Tesla3() : Car("Tesla 3", 1740, 740, 0.23){};
+    Tesla3() : Car("Tesla 3", 1740, 740, 0.23) {};
 };
 
 #endif
